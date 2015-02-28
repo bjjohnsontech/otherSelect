@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Jquery OtherSelect</title>
+<link rel="stylesheet" type="text/css" href="../jquery/jquery-ui/themes/camo/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="../jquery/jquery-ui-multiselect/jquery.multiselect.css" />
+<link rel="stylesheet" type="text/css" href="../jquery/jquery-ui-multiselect/jquery.multiselect.filter.css" />
+</head>
+
+<body>
+<h1>jQuery OtherSelect</h1>
+<h2>A jquery addon to handle adding aditional options in a select or multiselect</h2>
+<hr/>
+<p>
+This example shows the addon working with a basic single option select box
+</p>
+<p>
+<select id='single' class='ui-widget ui-widget-content ui-corner-all'>
+    <option value='first'>First</option>
+    <option value='second'>Second</option>
+    <option value='third'>Third</option>
+</select>
+</p>
+<p>
+<pre>$('#single').otherSelect({
+    background : '#B7C3AD',
+    widget : false
+});</pre>
+</p>
+<hr/>
+<p>
+This example shows the addon working with a single select box
+</p><p>
+also using the <a href='http://www.erichynds.com/blog/jquery-ui-multiselect-widget'>jquery-ui multiselect widget</a>
+</p>
+<p>
+<select id='singleWidg'>
+    <option value='first'>First</option>
+    <option value='second'>Second</option>
+    <option value='third'>Third</option>
+</select>
+</p>
+<p>
+<pre>$('#singleWidg').multiselect({
+   multiple: false,
+   header: "Select an option",
+   noneSelectedText: "Select an Option",
+   selectedList: 1
+}).otherSelect({
+    background : '#B7C3AD',
+    widget: true
+});</pre>
+</p><p>
+This sets up the muliselect first, the otherSelect widget is set up after.
+</p>
+</p>
+<hr/>
+<p>
+This example shows the addon working with a basic multi-select select box
+</p>
+<p>
+<select id='multi' class='ui-widget ui-corner-all ui-widget-content' multiple='multiple'>
+    <option value='first'>First</option>
+    <option value='second'>Second</option>
+    <option value='third'>Third</option>
+</select>
+</p>
+<p>
+<pre>$('#multi').otherSelect({
+    background : '#B7C3AD',
+    widget : false
+});</pre>
+</p>
+<hr/>
+<p>
+This example shows the addon working with a multi-select box
+</p><p>
+also using the <a href='http://www.erichynds.com/blog/jquery-ui-multiselect-widget'>jquery-ui multiselect widget</a>
+</p>
+<p>
+<select id='multiWidg' class='ui-widget ui-corner-all' multiple='multiple'>
+    <option value='first'>First</option>
+    <option value='second'>Second</option>
+    <option value='third'>Third</option>
+</select>
+</p>
+<p>
+<pre>$('#multiWidg').otherSelect({
+    multiselectOptions : {
+       multiple: true,
+       header: "Select an option",
+       noneSelectedText: "Select an Option",
+       selectedList: 1
+    },
+    background : '#B7C3AD',
+    widget : true
+});</pre>
+</p><p>
+This sets up the otherSelect and the multiselect widget is set up through the widget, passing the multiselect arguments.
+</p>
+<hr/>
+<h3>Available options</h3>
+<ul>
+
+<li>otherOption : The text of the option to initiate the addition<br/><p>default : "Add Option"</p></li>
+<li>background : The background of the input and buttons div<br/><p>default : ''</li>
+<li>addTitle : the hoverover title of the ad button<br/><p>default : 'Add Option'</li>
+<li>cancelTitle : the hoverover of the cancel button<br/><p>default : 'Cancel'</li>
+<li>optionMinLength : option minimum length<br/><p>default : 1</li>
+<li>optionValidation : the function to validate the newly entered option<br/><p>default : <pre>function(value, settings) {
+    if (value.length < minLength) {
+        alert('Option value must be larger than ' + (minLength - 1) + ' char(s)');
+        return false;
+    } else {
+        return true;
+    }</pre></li>
+<li>widget : whether the select is using the multiselect widget<br/><p>default : false</li>
+<li>multiselectOptions : the options to pass to the multiselect widget<br/><p>default : </li>
+</ul>
+<hr/>
+<h3>To Do:</h3>
+<ul>
+<li>Correct for mobile.</li>
+</ul>
+<script src='../jquery/jquery-1.10.2.min.js' type='text/javascript'></script>
+<script src='../jquery/jquery-ui/jquery-ui-1.10.3.custom.min.js' type='text/javascript'></script>
+<script src='../jquery/jquery-ui-multiselect/src/jquery.multiselect.min.js' type='text/javascript'></script>
+<script src='../jquery/jquery-ui-multiselect/src/jquery.multiselect.filter.min.js' type='text/javascript'></script>
+<script src='jquery.otherSelect.js' type='text/javascript'></script>
+<script type='text/javascript'>
+$('#single').otherSelect({
+    background : '#B7C3AD',
+    widget : false
+});
+$('#singleWidg').multiselect({
+   multiple: false,
+   header: "Select an option",
+   noneSelectedText: "Select an Option",
+   selectedList: 1
+}).otherSelect({
+    background : '#B7C3AD',
+    widget: true
+});
+$('#multi').otherSelect({
+    background : '#B7C3AD',
+    widget : false
+});
+$('#multiWidg').otherSelect({
+    multiselectOptions : {
+       multiple: true,
+       header: "Select an option",
+       noneSelectedText: "Select an Option",
+       selectedList: 1
+    },
+    background : '#B7C3AD',
+    widget : true
+});
+</script>
+</body>
+</html>
